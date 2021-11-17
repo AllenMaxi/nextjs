@@ -1,7 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import { useAuth } from "../lib/auth";
+import styles from "../styles/Home.module.css";
 
 export default function Home() {
+  const auth = useAuth();
   return (
     <div className={styles.container}>
       <Head>
@@ -11,12 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        
+        <h1 className="title">Feedback</h1>
+        <button onClick={(e) => auth.signinWhitGithub()}>Sign in</button>
       </main>
 
-      <footer className={styles.footer}>
-    
-      </footer>
+      <footer className={styles.footer}></footer>
     </div>
-  )
+  );
 }
