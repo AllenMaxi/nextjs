@@ -1,3 +1,5 @@
+import { Button } from "@chakra-ui/button";
+import { Heading } from "@chakra-ui/layout";
 import Head from "next/head";
 import { useAuth } from "../lib/auth";
 import styles from "../styles/Home.module.css";
@@ -13,8 +15,8 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className="title">Feedback</h1>
-        <button onClick={(e) => auth.signinWhitGithub()}>Sign in</button>
+        <Heading className="title">Feedback</Heading>
+        <Button onClick={(e) => auth.signinWhitGithub()}>Sign in</Button>
       </main>
 
       <footer className={styles.footer}></footer>
